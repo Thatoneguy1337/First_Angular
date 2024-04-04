@@ -1,41 +1,42 @@
-@media (min-width:320px){
     
-    h1{
-       margin: 10px;
-       font-size: 20px; 
-       cursor:pointer;
-    }
-
-    nav{
-        width:100%;
-        display:flex;
-        justify-content: flex-end, space-evenly;
-        
-    }
+h1{
+margin: 10px;
+font-size: 20px; 
+cursor:pointer;
+}
 
 
-    button{
-        border-radius:12px;
-        width:75px;
-        height: 20px;
-        border: none;
-        background-color:var(--grey-3);
-        color: var(--grey-0);
-        cursor:pointer;
-    }
+nav{
+width:100%;
+display:flex;
+justify-content: flex-start;
+gap:6px;
+}
 
-    button:hover {
-        background-color:var(--grey-0);
-        background-color:var(--grey-3);
-    }
 
-    li{
+button{
+ border-radius:12px;
+ width:75px;
+ height: 20px;
+ border: none;
+ background-color:var(--grey-3);
+ color: var(--grey-0);
+ cursor:pointer;
+}
+
+button:hover {
+    background-color:var(--grey-0);
+    background-color:var(--grey-3);
+}
+
+
+li{
         margin-right: 20px;
     }
 
 
 
-}
+
 
 
 
