@@ -1,16 +1,18 @@
 <div>
-    <form>
-         <h2>Login</h2>
+    <form (submit)="formSubmit($event)">
+        <div><h2>Login</h2></div>
     <label>
-     <h3>Email</h3>   
+     <h5>Email</h5>   
     <input type="email" placeholder="SeuEmail@gmail.com" [formControl]="email">
     </label>
 
     <label>
-       <h3>Password</h3>
+       <h5>Senha</h5>
        <input type="password" placeholder="password" [formControl]="password"> 
     </label>
     
+    <div><button type="submit">Entrar</button></div>
+
     </form>
 
 </div>

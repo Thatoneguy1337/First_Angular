@@ -11,4 +11,15 @@ export class FormloginComponent {
   email = new FormControl("");
   password = new FormControl("");
 
+  formSubmit(event: Event){
+    event.preventDefault();
+    console.log({
+      email: this.email.value,
+      password: this.password.value
+    });
+  
+    this.email.setValue("");
+    this.password.setValue("");
+  }
+
 }

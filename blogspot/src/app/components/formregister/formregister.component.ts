@@ -1,4 +1,3 @@
-import { formatCurrency } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 

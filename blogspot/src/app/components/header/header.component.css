@@ -1,28 +1,39 @@
     
+div{
+    display: flex;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
 h1{
-margin: 10px;
 font-size: 20px; 
-cursor:pointer;
+}
+
+h2{
+ font-size: 20px;
+ color:var(--color-primary);   
 }
 
 
 nav{
 width:100%;
 display:flex;
-justify-content: flex-start;
+justify-content: flex-end;
 gap:6px;
 }
 
 
 button{
- border-radius:12px;
- width:75px;
- height: 20px;
- border: none;
- background-color:var(--grey-3);
- color: var(--grey-0);
- cursor:pointer;
-}
+    width: 30%;
+    height: 25px;
+    border-radius:12px;
+    border: none;
+    background-color:var(--color-primary);
+    color: var(--grey-0);
+    border-radius: 8px;
+    cursor:pointer;
+   }
 
 button:hover {
     background-color:var(--grey-0);
