@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserService } from '../../services/userService.services';
 @Component({
   selector: 'app-formregister',
   standalone: true,
@@ -9,18 +9,50 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './formregister.component.css'
 })
 export class FormregisterComponent {
-  fullname = new FormControl("");
-  username = new FormControl("");
-  user_img = new FormControl("");
-  bg_img = new FormControl("");
-  email = new FormControl("");
-  password = new FormControl("");
-  ssc_number = new FormControl("");
-  telephone = new FormControl("");
-  birthdate = new FormControl("");
-  zip_code = new FormControl("");
-  state = new FormControl("");
-  city = new FormControl("");
-  street = new FormControl("");
-  number = new FormControl("");
+
+  registerForm: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService
+  ) {
+    this.registerForm = this.formBuilder.group({
+      fullname: ['', Validators.required],
+      username: ['', Validators.required],
+      user_img: [''],
+      bg_img: [''],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      ssc_number: [''],
+      telephone: [''],
+      birthdate: [''],
+      zip_code: [''],
+      state: [''],
+      city: [''],
+      street: [''],
+      number: ['']
+    });
+  }
+
+  onSubmit() {
+    if (this.registerForm.valid) {
+      this.userService.createUser(this.registerForm.value).subscribe(
+        response => {
+          console.log('Usuário criado com sucesso:', response);
+          this.registerForm.reset();
+        },
+        error => {
+          console.error('Erro ao criar usuário:', error);
+        }
+      );
+    } else {
+      console.error('Formulário inválido');
+    }
+  }
+  
+  
+  
+
+
+
 }

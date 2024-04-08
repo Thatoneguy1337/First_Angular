@@ -1,5 +1,81 @@
 <div>
-
-
+    <form (submit)="formSubmit($event)">
+        <div><h2>Registro</h2></div>
     
+    
+    <label>
+        <h5>Fullname</h5>   
+        <input type="fullname" placeholder="insira o seu nome completo" [formControl]="fullname">
+    </label>
+    
+    <label>
+        <h5>Username</h5>   
+       <input type="username" placeholder="insira o nome do usuário" [formControl]="username">
+    </label>
+    
+    <label>
+        <h5>Foto de perfil do usuário(opcional)</h5>   
+       <input type="user_img" placeholder="insira a url da imagem aqui" [formControl]="user_img">
+    </label>
+   
+    <label>
+       <h5>Foto do background do perfil(opcional)</h5>   
+       <input type="bg_img" placeholder="insira a url da imagem aqui" [formControl]="bg_img">
+    </label>
+
+    <label>
+     <h5>Email</h5>   
+    <input type="email" placeholder="SeuEmail@gmail.com" [formControl]="email">
+    </label>
+
+    <label>
+       <h5>Senha</h5>
+       <input type="password" placeholder="password" [formControl]="password"> 
+    </label>
+    
+    <label>
+        <h5>Cpf</h5>   
+       <input type="ssc_number" placeholder="insira seu cpf aqui" [formControl]="ssc_number">
+    </label>
+   
+    <label>
+        <h5>Telephone</h5>   
+       <input type="telephone" placeholder="(11)5555-5555" [formControl]="telephone">
+    </label>
+   
+    <label>
+        <h5>Data de nascimento</h5>   
+       <input type="email" placeholder="dd/mm/aa" [formControl]="birthdate">
+    </label>
+   
+    <label>
+        <h5>CEP</h5>   
+       <input type="zip_code" placeholder="CEP" [formControl]="zip_code">
+    </label>
+   
+    <label>
+        <h5>Estado</h5>   
+       <input type="state" placeholder="Ex: São Paulo " [formControl]="state">
+    </label>
+   
+    <label>
+        <h5>Cidade</h5>   
+       <input type="cidade" placeholder="Ex: Mogi das cruzes" [formControl]="city">
+    </label>
+   
+    <label>
+       <h5>Rua</h5>   
+       <input type="street" placeholder="Ex: Rua ibiraba" [formControl]="street">
+    </label>
+    
+    <label>
+        <h5>Number</h5>   
+       <input type="number" placeholder="Ex: 123" [formControl]="number">
+    </label>
+   
+
+    <div><button type="submit">Registrar-se</button></div>
+
+    </form>
+
 </div>
