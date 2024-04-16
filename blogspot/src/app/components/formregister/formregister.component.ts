@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms'; 
 import { UserService } from '../../services/userService.services';
+
 @Component({
   selector: 'app-formregister',
   standalone: true,
@@ -9,7 +10,6 @@ import { UserService } from '../../services/userService.services';
   styleUrl: './formregister.component.css'
 })
 export class FormregisterComponent {
-
   registerForm: FormGroup;
 
   constructor(
@@ -49,10 +49,5 @@ export class FormregisterComponent {
       console.error('Formulário inválido');
     }
   }
-  
-  
-  
-
-
 
 }
