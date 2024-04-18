@@ -5,7 +5,7 @@ IRegisterUserReturn,
 TLoginUserData, 
 TRegisterUserData, 
 TUserReturn 
-} from '../interfaces/userRegister';
+} from '../interfaces/user.interfaces';
 
 @Injectable({
   providedIn: 'root'

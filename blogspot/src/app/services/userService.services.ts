@@ -5,7 +5,7 @@ import {
   TLoginUserData,
   TRegisterUserData,
   TUserReturn,
-} from '../interfaces/userRegister';
+} from '../interfaces/user.interfaces';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { UserRequest } from '../api/user.request';
