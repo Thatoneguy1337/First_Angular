@@ -46,15 +46,15 @@ button{
   cursor:pointer;
  }
 
-input {
+.input-wrapper input {
 width:99%;
 height: 30px;
 border-radius: 8px;
-border: none;
+border:none
 }   
 
-input:focus {
-  border-color: var(--color-primary);
+ form .input-wrapper input:focus{
+  border-color:var(--color-primary);
 }
 
 

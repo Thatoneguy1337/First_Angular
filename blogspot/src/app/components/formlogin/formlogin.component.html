@@ -1,14 +1,14 @@
 <div>
-    <form (submit)="formSubmit($event)">
+    <form (ngSubmit)="submit()" [formGroup]="loginForm">
         <div><h2>Login</h2></div>
     <label>
      <h5>Email</h5>   
-    <input type="email" placeholder="SeuEmail@gmail.com" [formControl]="email">
+    <input type="email" placeholder="SeuEmail@gmail.com" formControlName="email">
     </label>
 
     <label>
        <h5>Senha</h5>
-       <input type="password" placeholder="password" [formControl]="password"> 
+       <input type="password" placeholder="password" formControlName="password"> 
     </label>
     
     <div><button type="submit">Entrar</button></div>

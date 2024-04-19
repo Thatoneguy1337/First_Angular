@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms'; 
+import { UserService } from '../../services/userService.services';
+import { TLoginUserData } from '../../interfaces/user.interfaces';
 @Component({
   selector: 'app-formlogin',
   standalone: true,
@@ -8,18 +10,16 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './formlogin.component.css'
 })
 export class FormloginComponent {
-  email = new FormControl("");
-  password = new FormControl("");
+  constructor(private userService: UserService) {}
 
-  formSubmit(event: Event){
-    event.preventDefault();
-    console.log({
-      email: this.email.value,
-      password: this.password.value
-    });
-  
-    this.email.setValue("");
-    this.password.setValue("");
+  loginForm = new FormGroup({
+    email: new FormControl<string | null>(null, [Validators.required, Validators.minLength(4), Validators.maxLength(127)]),
+    password: new FormControl<string | null>(null, [Validators.required, Validators.minLength(8), Validators.maxLength(8) ]),
+  });
+
+  submit(){
+    const data = this.loginForm.value as TLoginUserData;
+    this.userService.login(data);
   }
 
 }

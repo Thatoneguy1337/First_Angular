@@ -1,75 +1,75 @@
 <div>
-    <form [formGroup]="registerForm" (submit)="onSubmit()">
+    <form (ngSubmit)="submit()" [formGroup]="registerForm">
 
         <div><h2>Registro</h2></div>
     
     
-    <label>
+    <label class="input-wrapper">
         <h5>Fullname</h5>   
         <input type="fullname" placeholder="insira o seu nome completo" formControlName="fullname">
     </label>
     
-    <label>
+    <label class="input-wrapper">
         <h5>Username</h5>   
        <input type="username" placeholder="insira o nome do usuário" formControlName="username">
     </label>
     
-    <label>
+    <label class="input-wrapper">
         <h5>Foto de perfil do usuário(opcional)</h5>   
        <input type="user_img" placeholder="insira a url da imagem aqui" formControlName="user_img">
     </label>
    
-    <label>
+    <label class="input-wrapper">
        <h5>Foto do background do perfil(opcional)</h5>   
        <input type="bg_img" placeholder="insira a url da imagem aqui" formControlName="bg_img">
     </label>
 
-    <label>
+    <label class="input-wrapper">
      <h5>Email</h5>   
     <input type="email" placeholder="SeuEmail@gmail.com" formControlName="email">
     </label>
 
-    <label>
+    <label class="input-wrapper">
        <h5>Senha</h5>
        <input type="password" placeholder="password" formControlName="password"> 
     </label>
     
-    <label>
+    <label class="input-wrapper">
         <h5>Cpf</h5>   
        <input type="ssc_number" placeholder="insira seu cpf aqui" formControlName="ssc_number">
     </label>
    
-    <label>
+    <label class="input-wrapper">
         <h5>Telephone</h5>   
        <input type="telephone" placeholder="(11)5555-5555" formControlName="telephone">
     </label>
    
-    <label>
+    <label class="input-wrapper">
         <h5>Data de nascimento</h5>   
        <input type="email" placeholder="dd/mm/aa" formControlName="birthdate">
     </label>
    
-    <label>
+    <label class="input-wrapper">
         <h5>CEP</h5>   
        <input type="zip_code" placeholder="CEP" formControlName="zip_code">
     </label>
    
-    <label>
+    <label class="input-wrapper">
         <h5>Estado</h5>   
        <input type="state" placeholder="Ex: São Paulo " formControlName="state">
     </label>
    
-    <label>
+    <label class="input-wrapper">
         <h5>Cidade</h5>   
        <input type="cidade" placeholder="Ex: Mogi das cruzes" formControlName="city">
     </label>
    
-    <label>
+    <label class="input-wrapper">
        <h5>Rua</h5>   
        <input type="street" placeholder="Ex: Rua ibiraba" formControlName="street">
     </label>
     
-    <label>
+    <label class="input-wrapper">
         <h5>Number</h5>   
        <input type="number" placeholder="Ex: 123" formControlName="number">
     </label>
