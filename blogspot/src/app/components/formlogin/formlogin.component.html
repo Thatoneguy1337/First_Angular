@@ -4,11 +4,23 @@
     <label>
      <h5>Email</h5>   
     <input type="email" placeholder="SeuEmail@gmail.com" formControlName="email">
+    <p *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.value !== null"
+    >O Email é um campo obrigatório !</p>
+    <p *ngIf="registerForm.get('name')?.errors?.['minlength']">
+        O nome precisa conter pelo menos 8 caracteres
+    </p>
+
     </label>
 
     <label>
        <h5>Senha</h5>
        <input type="password" placeholder="password" formControlName="password"> 
+       <p *ngIf="registerForm.get('name')?.errors?.['minlength']">
+        O nome precisa conter 8 caracteres
+      </p>
+      <p *ngIf="registerForm.get('name')?.errors?.['maxlength']">
+        O nome precisa conter no máximo 8 caracteres
+      </p>
     </label>
     
     <div><button type="submit">Entrar</button></div>

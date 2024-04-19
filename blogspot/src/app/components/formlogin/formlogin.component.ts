@@ -13,11 +13,15 @@ export class FormloginComponent {
   constructor(private userService: UserService) {}
 
   loginForm = new FormGroup({
-    email: new FormControl<string | null>(null, [Validators.required, Validators.minLength(4), Validators.maxLength(127)]),
+    email: new FormControl<string | null>(null, [Validators.required, Validators.minLength(8), Validators.maxLength(127)]),
     password: new FormControl<string | null>(null, [Validators.required, Validators.minLength(8), Validators.maxLength(8) ]),
   });
 
   submit(){
+    console.log(this.loginForm.get('email')?.errors);
+    console.log(this.loginForm.get('password')?.errors);
+    console.log(this.loginForm.status);
+
     const data = this.loginForm.value as TLoginUserData;
     this.userService.login(data);
   }
