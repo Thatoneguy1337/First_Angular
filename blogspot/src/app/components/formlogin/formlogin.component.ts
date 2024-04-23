@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms'; 
 import { UserService } from '../../services/userService.services';
@@ -5,7 +6,7 @@ import { TLoginUserData } from '../../interfaces/user.interfaces';
 @Component({
   selector: 'app-formlogin',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './formlogin.component.html',
   styleUrl: './formlogin.component.css'
 })
