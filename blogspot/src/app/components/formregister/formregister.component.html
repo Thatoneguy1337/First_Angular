@@ -13,12 +13,12 @@
     Este campo é obrigatório    
     </p>
     
-    <p *ngIf="registerForm.get('name')?.errors?.['minlength']">
+    <p *ngIf="registerForm.get('fullname')?.errors?.['minlength']">
         O nome completo precisa conter pelo menos 8 caracteres
     </p>
 
     
-    <p *ngIf="registerForm.get('name')?.errors?.['maxlength']">
+    <p *ngIf="registerForm.get('fullname')?.errors?.['maxlength']">
         O nome completo deve conter no máximo 45 caracteres
     </p>
 
@@ -33,12 +33,12 @@
      Este campo é obrigatório    
     </p>
 
-    <p *ngIf="registerForm.get('name')?.errors?.['minlength']">
+    <p *ngIf="registerForm.get('username')?.errors?.['minlength']">
         O nome precisa conter pelo menos 3 caracteres
     </p>
     
     
-    <p *ngIf="registerForm.get('name')?.errors?.['maxlength']">
+    <p *ngIf="registerForm.get('username')?.errors?.['maxlength']">
         O nome deve conter no máximo 45 caracteres
     </p>
 
@@ -78,7 +78,7 @@
        <h5>Senha</h5>
        <input type="password" placeholder="password" formControlName="password">
        
-       <p *ngIf="registerForm.get('password')?.errors?.['minlength']">
+       <p *ngIf="registerForm.get('password')?.errors?.['minLength']">
         A senha deve conter pelo menos 8 caracteres
         </p>
 
@@ -87,7 +87,7 @@
         </p>
 
         <p
-        *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.value !== null"
+        *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('email')?.value !== null"
         > 
         Este campo é obrigatório    
         </p>
@@ -98,11 +98,11 @@
         <h5>Cpf</h5>   
        <input type="ssc_number" placeholder="insira seu cpf aqui" formControlName="ssc_number">
        
-       <p *ngIf="registerForm.get('ssc_number')?.errors?.['minlength']">
+       <p *ngIf="registerForm.get('ssc_number')?.errors?.['minLength']">
         O nome precisa conter pelo menos 11 caracteres
         </p>
 
-        <p *ngIf="registerForm.get('ssc_number)?.errors?.['maxlength']">
+        <p *ngIf="registerForm.get('ssc_number')?.errors?.['maxLength']">
         O nome precisa conter pelo menos 45 caracteres
         </p>
 
@@ -134,20 +134,20 @@
    
     <label class="input-wrapper">
         <h5>Data de nascimento</h5>   
-       <input type="text" placeholder="dd/mm/aa" formControlName="birthdate">
+     <input type="text" placeholder="dd/mm/aa" formControlName="birthdate"/>
+    
        <p *ngIf="registerForm.get('birthdate')?.errors?.['minlength']">
-        O nome precisa conter no máximo 11 caracteres
-        </p>
-       
-        <p *ngIf="registerForm.get('birthdate')?.errors?.['maxlength']">
-        O nome precisa conter pelo menos 11 caracteres
-        </p>
+           A data de nascimento precisa conter pelo menos 11 caracteres
+       </p>
+      
+       <p *ngIf="registerForm.get('birthdate')?.errors?.['maxlength']">
+           A data de nascimento precisa conter no máximo 11 caracteres
+       </p>
+   
+       <p *ngIf="registerForm.get('birthdate')?.errors?.['required'] && registerForm.get('birthdate')?.value !== null">
+           Este campo é obrigatório    
+       </p>
 
-        <p
-        *ngIf="registerForm.get('birthdate')?.errors?.['required'] && registerForm.get('birthdate')?.value !== null"
-        > 
-        Este campo é obrigatório    
-        </p>
     </label>
    
     <label class="input-wrapper">
@@ -173,39 +173,33 @@
    
     <label class="input-wrapper">
         <h5>Estado</h5>   
-       <input type="state" placeholder="Ex: São Paulo " formControlName="state">
+        <input type="state" placeholder="Ex: São Paulo " formControlName="state">
         
         <p *ngIf="registerForm.get('state')?.errors?.['maxlength']">
-        O nome precisa conter no màximo 127 caracteres
+            O nome precisa conter no máximo 127 caracteres
         </p>
-
-        <p
-        *ngIf="registerForm.get('state')?.errors?.['required'] && registerForm.get('state')?.value !== null"
-        > 
-        Este campo é obrigatório    
+    
+        <p *ngIf="registerForm.get('state')?.errors?.['required'] && registerForm.get('state')?.value !== null">
+            Este campo é obrigatório    
         </p>
     </label>
-   
+       
     <label class="input-wrapper">
         <h5>Cidade</h5>   
-       <input type="cidade" placeholder="Ex: Mogi das cruzes" formControlName="city">
-       
-       <p *ngIf="registerForm.get('city')?.errors?.['minlength']">
-        O campo precisa conter no minimo 3 caracteres
+        <input type="text" placeholder="Ex: Mogi das cruzes" formControlName="city">
+        
+        <p *ngIf="registerForm.get('city')?.errors?.['minlength']">
+            O campo precisa conter no mínimo 3 caracteres
         </p>
        
         <p *ngIf="registerForm.get('city')?.errors?.['maxlength']">
-        O campo pelo menos 127 caracteres
-        </p>
-
-        <p
-        *ngIf="registerForm.get('city')?.errors?.['required'] && registerForm.get('city')?.value !== null"
-        > 
-        Este campo é obrigatório    
+            O campo precisa conter no máximo 127 caracteres
         </p>
     
+        <p *ngIf="registerForm.get('city')?.errors?.['required'] && registerForm.get('city')?.value !== null">
+            Este campo é obrigatório    
+        </p>
     </label>
-   
     <label class="input-wrapper">
        <h5>Rua</h5>   
        <input type="street" placeholder="Ex: Rua ibiraba" formControlName="street">
@@ -227,7 +221,7 @@
     
     <label class="input-wrapper">
         <h5>Number</h5>   
-       <input type="number" placeholder="Ex: 123" formControlName="number">
+       <input type="text" placeholder="Ex: 123" formControlName="number">
        
         <p *ngIf="registerForm.get('number')?.errors?.['maxlength']">
         O nome precisa conter no máximo 127 caracteres
