@@ -4,7 +4,8 @@ import { ILoginUserReturn,
 IRegisterUserReturn, 
 TLoginUserData, 
 TRegisterUserData, 
-TUserReturn 
+TUserReturn,
+IUser 
 } from '../interfaces/user.interfaces';
 
 @Injectable({
@@ -16,21 +17,21 @@ export class UserRequest {
   constructor(private http: HttpClient) { }
 
   register(formData: TRegisterUserData){
-    return this.http.post<IRegisterUserReturn>(`${this.BASE_URL}/users`, formData);
+    return this.http.post<IRegisterUserReturn>(`${this.BASE_URL}/user`, formData);
   }
 
   login(formData: TLoginUserData){
     return this.http.post<ILoginUserReturn>(`${this.BASE_URL}/login`, formData);
   }
 
-  getUser(){
+  getUserProfile(){
     const token = localStorage.getItem("@TOKEN");
   
     if(token){      
       const parsedToken = JSON.parse(token);
      
 
-      return this.http.get<TUserReturn>(`${this.BASE_URL}/users/profile`, {
+      return this.http.get<TUserReturn>(`${this.BASE_URL}/user/profile`, {
         headers: {
           Authorization: `Bearer ${parsedToken}`
         }
@@ -39,4 +40,13 @@ export class UserRequest {
       return null;
     }  
   }
+
+  getAllUsers(){
+    return this.http.get<TUserReturn>(`${this.BASE_URL}/user`)
+ } 
+
+  
+
+
+
 }
