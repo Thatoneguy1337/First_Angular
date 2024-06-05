@@ -25,13 +25,12 @@ export class UserRequest {
 
   getUser(){
     const token = localStorage.getItem("@TOKEN");
-    const userId = localStorage.getItem("@USERID");
-
-    if(token && userId){      
+  
+    if(token){      
       const parsedToken = JSON.parse(token);
-      const parsedUserId = JSON.parse(userId);
+     
 
-      return this.http.get<TUserReturn>(`${this.BASE_URL}/users/${parsedUserId}`, {
+      return this.http.get<TUserReturn>(`${this.BASE_URL}/users/profile`, {
         headers: {
           Authorization: `Bearer ${parsedToken}`
         }
