@@ -16,7 +16,8 @@ street: string;
 number: string;
 }
 
-export interface IUserData{    
+export interface IUserData{
+id: number | null;    
 fullname: string | null; 
 username: string | null;
 user_img: string | null;
@@ -37,7 +38,7 @@ export type TRegisterUserData = Omit<IUserData, "id">;
 
 export type TLoginUserData = Pick<IUserData, "email" | "password">;
 
-export type TUserReturn = Omit<IUser, "password">;
+export type TUserReturn = Omit<IUserData, "password">;
 
 
 
