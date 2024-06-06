@@ -59,7 +59,18 @@ export class UserRequest {
   } else {
     return null;
   }
-}
+ }
+
+ getUser(userId:string){
+  
+  return this.http.get<IUserData>(`${this.BASE_URL}/user/${userId}`) 
+
+ }
+
+ 
+
+
+
 
 
 
