@@ -66,9 +66,25 @@ export class UserRequest {
   return this.http.get<IUserData>(`${this.BASE_URL}/user/${userId}`) 
 
  }
+ 
+ deleteUser(userId:string){
+
+  const token = localStorage.getItem("@TOKEN");
+
+  if(token){      
+    const parsedToken = JSON.parse(token);
+    
+    return this.http.delete<IUserData>(`${this.BASE_URL}/user/${userId}` , {
+      headers: {
+        Authorization: `Bearer ${parsedToken}`
+      }
+    });
+  } else {
+    return null;
+  }
+ }
 
  
-
 
 
 
