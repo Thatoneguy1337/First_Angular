@@ -5,7 +5,9 @@ IRegisterUserReturn,
 TLoginUserData, 
 TRegisterUserData, 
 TUserReturn,
-IUserData 
+IUserData, 
+IUserEmail,
+INewUserPassword
 } from '../interfaces/user.interfaces';
 
 @Injectable({
@@ -84,8 +86,17 @@ export class UserRequest {
   }
  }
 
- 
+ forgotUserPassword(formData: Partial<IUserEmail>){
 
+  return this.http.post<IUserEmail>(`${this.BASE_URL}/user/resetPassword`, formData);
+
+ }
+
+ resetPassword(formData: Partial<INewUserPassword>, token:string ){
+
+  return this.http.patch<INewUserPassword>(`${this.BASE_URL}/user/${token}`, formData );
+
+ }
 
 
 

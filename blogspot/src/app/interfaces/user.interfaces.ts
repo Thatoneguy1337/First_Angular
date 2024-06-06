@@ -51,8 +51,13 @@ export interface ILoginUserReturn{
     user: TUserReturn
 }
 
+export interface IUserEmail{
+    email: string;
+}
 
-
+export interface INewUserPassword{
+    password: string;
+}
  
 
 
