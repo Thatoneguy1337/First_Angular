@@ -5,7 +5,7 @@ IRegisterUserReturn,
 TLoginUserData, 
 TRegisterUserData, 
 TUserReturn,
-IUser 
+IUserData 
 } from '../interfaces/user.interfaces';
 
 @Injectable({
@@ -45,7 +45,21 @@ export class UserRequest {
     return this.http.get<TUserReturn>(`${this.BASE_URL}/user`)
  } 
 
-  
+ updateUser(userId: string, formData: Partial<IUserData>){
+  const token = localStorage.getItem("@TOKEN");
+
+  if(token){      
+    const parsedToken = JSON.parse(token);
+    
+    return this.http.patch<IUserData>(`${this.BASE_URL}/user/${userId}`, formData, {
+      headers: {
+        Authorization: `Bearer ${parsedToken}`
+      }
+    });
+  } else {
+    return null;
+  }
+}
 
 
 

@@ -40,6 +40,7 @@ export type TLoginUserData = Pick<IUserData, "email" | "password">;
 export type TUserReturn = Omit<IUser, "password">;
 
 
+
 export interface IRegisterUserReturn{
     accessToken: string;
     user: TUserReturn;
