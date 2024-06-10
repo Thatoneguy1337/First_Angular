@@ -51,9 +51,45 @@ export class PostRequest {
         } else {
             return null;
         }
-
     }
 
+    getPost(){
+
+      const token = localStorage.getItem("@TOKEN");
+
+        if(token){
+          
+         const parsedToken = JSON.parse(token);
+         
+         return this.http.delete<TPostUserData>(`${this.BASE_URL}/post`, {
+            headers: {
+                Authorization: `Bearer ${parsedToken}`
+            }
+         });
+        } else {
+            return null;
+        }
+
+    }
+   
+    getPostById(postId: string ){
+        
+        const token = localStorage.getItem("@TOKEN");
+
+        if(token){
+        
+            const parsedToken = JSON.parse(token);
+
+            return this.http.get<TPostUserData>(`${this.BASE_URL}/post/${postId}`, {
+                headers: {
+                    Authorization: `Bearer ${parsedToken}`
+                }
+            })
+        }else{
+            return null
+        }
+
+    }
 
 }
 

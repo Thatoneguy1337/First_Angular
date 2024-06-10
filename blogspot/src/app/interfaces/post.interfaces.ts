@@ -12,7 +12,7 @@ description: string | null;
 post_img: string | null;
 }
 
-export type TPostUserData = Omit<IPostData, "id">;
+export type TPostUserData = Omit<IPostData, "id" |"posted_at" >;
 
 
 
