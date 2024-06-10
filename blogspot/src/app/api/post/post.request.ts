@@ -15,7 +15,35 @@ export class PostRequest {
     constructor(private http: HttpClient){ }
 
     createPost(formData: TPostUserData) {
-        return this.http.post<TPostUserData>(`${this.BASE_URL}/user`, formData);
+        return this.http.post<TPostUserData>(`${this.BASE_URL}/post`, formData);
+    }
+   
+    editPost(formData:TPostUserData, postId:string ) {
+        
+        const token = localStorage.getItem("@TOKEN") 
+        
+        if(token) {
+
+        const parsedToken = JSON.parse(token);
+        
+        return this.http.patch<TPostUserData>(`${this.BASE_URL}/post/${postId}`, formData, {
+            headers: {
+                Authorization: `Bearer ${parsedToken}`
+            }
+        })
+        } else {
+            return null;
+        }
+    }
+
+    deletePost(formData:TPostUserData, postId:string){
+        const token = localStorage.getItem("@TOKEN")
+
+        if(token){
+            
+
+        }
+
     }
 
 
