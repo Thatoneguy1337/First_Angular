@@ -36,12 +36,20 @@ export class PostRequest {
         }
     }
 
-    deletePost(formData:TPostUserData, postId:string){
+    deletePost(postId:string){
         const token = localStorage.getItem("@TOKEN")
 
         if(token){
-            
-
+          
+         const parsedToken = JSON.parse(token);
+         
+         return this.http.delete<TPostUserData>(`${this.BASE_URL}/post/${postId}`, {
+            headers: {
+                AUthorization: `Bearer ${parsedToken}`
+            }
+         });
+        } else {
+            return null;
         }
 
     }
