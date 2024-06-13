@@ -1,12 +1,12 @@
-  export interface User {
+  export interface IUser {
     id: number;
     username: string;
     user_img: string;
   }
   
-  export interface UserRequest {
+  export interface TUserRequest {
     id: number;
     liked_at: string;
     username: string;
-    user: User;
+    user: IUser;
   }
