@@ -4,7 +4,7 @@ interface IUser {
     user_img: string;
 }
 
-interface IThread {
+export interface IThread {
     id: number;
     created_at: string;
     edited: boolean;
