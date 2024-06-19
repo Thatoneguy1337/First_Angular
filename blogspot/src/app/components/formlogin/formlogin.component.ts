@@ -1,25 +1,29 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-formlogin',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './formlogin.component.html',
   styleUrl: './formlogin.component.css'
 })
 export class FormloginComponent {
-  email = new FormControl("");
-  password = new FormControl("");
+  registerForm = new FormGroup({
+    name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(8),
+    ]),
+  });
 
-  formSubmit(event: Event){
-    event.preventDefault();
-    console.log({
-      email: this.email.value,
-      password: this.password.value
-    });
-  
-    this.email.setValue("");
-    this.password.setValue("");
+  onSubmit() {
+    console.log(this.registerForm.get('password')?.errors);
+    console.log(this.registerForm.status);
+    this.registerForm.reset();
   }
+
+
 
 }

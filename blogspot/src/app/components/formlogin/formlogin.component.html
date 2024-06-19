@@ -1,18 +1,32 @@
-<div>
-    <form (submit)="formSubmit($event)">
-        <div><h2>Login</h2></div>
-    <label>
-     <h5>Email</h5>   
-    <input type="email" placeholder="SeuEmail@gmail.com" [formControl]="email">
-    </label>
-
-    <label>
-       <h5>Senha</h5>
-       <input type="password" placeholder="password" [formControl]="password"> 
-    </label>
-    
-    <div><button type="submit">Entrar</button></div>
-
-    </form>
-
-</div>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+   
+    <div>
+      <input type="email" placeholder="Seu e-mail" formControlName="email" />
+      <p
+        *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.value !== null"
+      >
+        O e-mail é obrigatório
+      </p>
+      <p *ngIf="registerForm.get('email')?.errors?.['email']">
+        Forneça um e-mail válido
+      </p>
+    </div>
+  
+    <div>
+      <input
+        type="password"
+        placeholder="Crie uma senha"
+        formControlName="password"
+      />
+      <p
+        *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.value !== null"
+      >
+        A senha é obrigatória
+      </p>
+      <p *ngIf="registerForm.get('password')?.errors?.['minlength']">
+        A senha precisa conter pelo menos 8 caracteres
+      </p>
+    </div>
+  
+    <button type="submit">Enviar</button>
+  </form>
