@@ -1,13 +1,13 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
    
     <div>
       <input type="email" placeholder="Seu e-mail" formControlName="email" />
       <p
-        *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.value !== null"
+        *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.value !== null"
       >
         O e-mail é obrigatório
       </p>
-      <p *ngIf="registerForm.get('email')?.errors?.['email']">
+      <p *ngIf="loginForm.get('email')?.errors?.['email']">
         Forneça um e-mail válido
       </p>
     </div>
@@ -19,11 +19,11 @@
         formControlName="password"
       />
       <p
-        *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.value !== null"
+        *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.value !== null"
       >
         A senha é obrigatória
       </p>
-      <p *ngIf="registerForm.get('password')?.errors?.['minlength']">
+      <p *ngIf="loginForm.get('password')?.errors?.['minlength']">
         A senha precisa conter pelo menos 8 caracteres
       </p>
     </div>

@@ -9,7 +9,7 @@ import { FormControl, ReactiveFormsModule, Validators, FormGroup } from '@angula
   styleUrl: './formlogin.component.css'
 })
 export class FormloginComponent {
-  registerForm = new FormGroup({
+  loginForm = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [
       Validators.required,
@@ -18,11 +18,8 @@ export class FormloginComponent {
   });
 
   onSubmit() {
-    console.log(this.registerForm.get('password')?.errors);
-    console.log(this.registerForm.status);
-    this.registerForm.reset();
+    console.log(this.loginForm.get('password')?.errors);
+    console.log(this.loginForm.status);
+    this.loginForm.reset();
   }
-
-
-
 }
