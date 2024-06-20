@@ -15,20 +15,20 @@ export class FormregisterComponent {
   ) {}
   
   registerForm = new FormGroup({
-   fullname:  new FormControl<string|null>(null),
-   username:  new FormControl<string|null>(null) ,
+   fullname:  new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(45)]),
+   username:  new FormControl(null,  [Validators.required, Validators.minLength(6)]) ,
    user_img: new FormControl<string|null>(null),
    bg_img: new FormControl<string|null>(null),
-   email: new FormControl<string|null>(null),
-   password: new FormControl<string|null>(null) ,
-   ssc_number: new FormControl<string|null>(null),
-   telephone: new FormControl<string|null>(null),
-   birthdate: new FormControl<string|null>(null),
-   zip_code: new FormControl<string|null>(null),
-   state: new FormControl<string|null>(null),
-   city: new FormControl<string|null>(null),
-   street: new FormControl<string|null>(null),
-   number: new FormControl<string|null>(null)
+   email: new FormControl<string|null>(null, [Validators.required, Validators.email]),
+   password: new FormControl<string|null>(null, [Validators.required, Validators.minLength(8)] ) ,
+   ssc_number: new FormControl<string|null>(null, [Validators.required, Validators.minLength(12), Validators.maxLength(12)]),
+   telephone: new FormControl<string|null>(null, [Validators.required, Validators.minLength(12)]),
+   birthdate: new FormControl<string|null>(null, [Validators.required, Validators.minLength(9)]),
+   zip_code: new FormControl<string|null>(null, [Validators.required, Validators.minLength(8)]),
+   state: new FormControl<string|null>(null, [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
+   city: new FormControl<string|null>(null, [Validators.required, Validators.minLength(2), Validators.maxLength(30)] ),
+   street: new FormControl<string|null>(null, [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
+   number: new FormControl<string|null>(null, [Validators.required, Validators.minLength(1), Validators.maxLength(8)])
   });
 
 
