@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { TLoginUserData } from '../../interfaces/user.interfaces';
+import { UserService } from '../../services/userService.services';
 @Component({
   selector: 'app-formlogin',
   standalone: true,
@@ -9,7 +11,8 @@ import { FormControl, ReactiveFormsModule, Validators, FormGroup, FormBuilder } 
   styleUrl: './formlogin.component.css'
 })
 export class FormLoginComponent {
-  loginForm: FormGroup;
+   loginForm: FormGroup;
+  
   constructor(
     private userService: UserService, 
     private fb: FormBuilder 
@@ -20,7 +23,7 @@ export class FormLoginComponent {
     });
   }
 
-  submit() {
+  onSubmit() {
     if (this.loginForm.valid) {
       const data = this.loginForm.value as TLoginUserData;
       this.userService.login(data);
