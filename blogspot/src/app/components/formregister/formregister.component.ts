@@ -19,23 +19,24 @@ export class FormregisterComponent {
     registerForm = new FormGroup({
       fullname:  new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(45)]),
       username:  new FormControl(null,  [Validators.required, Validators.minLength(6)]) ,
-      user_img: new FormControl<string|null>(null),
-      bg_img: new FormControl<string|null>(null),
-      email: new FormControl<string|null>(null, [Validators.required, Validators.email]),
-      password: new FormControl<string|null>(null, [Validators.required, Validators.minLength(8)] ) ,
-      ssc_number: new FormControl<string|null>(null, [Validators.required, Validators.minLength(12), Validators.maxLength(12)]),
-      telephone: new FormControl<string|null>(null, [Validators.required, Validators.minLength(12)]),
-      birthdate: new FormControl<string|null>(null, [Validators.required, Validators.minLength(9)]),
-      zip_code: new FormControl<string|null>(null, [Validators.required, Validators.minLength(8)]),
-      state: new FormControl<string|null>(null, [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
-      city: new FormControl<string|null>(null, [Validators.required, Validators.minLength(2), Validators.maxLength(30)] ),
-      street: new FormControl<string|null>(null, [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
-      number: new FormControl<string|null>(null, [Validators.required, Validators.minLength(1), Validators.maxLength(8)])
+      user_img: new FormControl(null),
+      bg_img: new FormControl(null),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)] ) ,
+      ssc_number: new FormControl(null, [Validators.required, Validators.minLength(12), Validators.maxLength(12)]),
+      telephone: new FormControl(null, [Validators.required, Validators.minLength(12)]),
+      birthdate: new FormControl(null, [Validators.required, Validators.minLength(9)]),
+      zip_code: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      state: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
+      city: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(30)] ),
+      street: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
+      number: new FormControl(null, [Validators.required, Validators.minLength(1), Validators.maxLength(8)])
      });
     
    
       onSubmit() {
         const data = this.registerForm.value as TRegisterUserData;
+        console.log(this.registerForm.get('password')?.errors);
         this.userService.login(data);
         this.registerForm.reset();
         }
