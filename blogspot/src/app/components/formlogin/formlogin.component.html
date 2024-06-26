@@ -1,7 +1,11 @@
+<div>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
    
-    <div>
+    <label>
+      <h5>Email</h5>
+      <div>
       <input type="email" placeholder="Seu e-mail" formControlName="email" />
+      </div>
       <p
         *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.value !== null"
       >
@@ -10,14 +14,17 @@
       <p *ngIf="loginForm.get('email')?.errors?.['email']">
         Forneça um e-mail válido
       </p>
-    </div>
+    </label>
   
-    <div>
+    <label>
+      <h5>Password</h5>
+      <div>
       <input
         type="password"
         placeholder="Crie uma senha"
         formControlName="password"
       />
+      </div>
       <p
         *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.value !== null"
       >
@@ -26,7 +33,8 @@
       <p *ngIf="loginForm.get('password')?.errors?.['minlength']">
         A senha precisa conter pelo menos 8 caracteres
       </p>
-    </div>
+    </label>
   
     <button type="submit">Enviar</button>
   </form>
+</div>  

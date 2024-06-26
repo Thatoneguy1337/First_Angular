@@ -47,13 +47,30 @@ button{
    }
 
 input {
-width:99%;
-height: 30px;
-border-radius: 8px;
-border: none;
+width:90%;
+height: 40px;
+border: none; 
+outline: none;
 }   
 
-input input:focus , input:active{
-    border-color: var(--color-primary);
+label > div {
+display: flex;
+flex-direction: column;
+border-radius: 8px;
+}
+
+label > div:hover {
+border: solid 2px var(--color-primary);
+transition: 1.5s;    
+}
+
+@media (min-width: 768px)  {
+
+    form {
+
+     width: 40%;   
+
+    }
+        
 }
 
