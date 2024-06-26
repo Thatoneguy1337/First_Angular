@@ -11,14 +11,12 @@ import {TRegisterUserData} from  '../../interfaces/user.interfaces';
 })
 export class FormregisterComponent {
   
-  registerForm: FormGroup;
-  
   constructor(
     private userService: UserService,
     private fb: FormBuilder 
-  ) {
+  ) {}
 
-     this.registerForm = this.fb.group({
+    registerForm = new FormGroup({
       fullname:  new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(45)]),
       username:  new FormControl(null,  [Validators.required, Validators.minLength(6)]) ,
       user_img: new FormControl<string|null>(null),
@@ -34,15 +32,14 @@ export class FormregisterComponent {
       street: new FormControl<string|null>(null, [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
       number: new FormControl<string|null>(null, [Validators.required, Validators.minLength(1), Validators.maxLength(8)])
      });
-    }
+    
    
       onSubmit() {
-        if(this.registerForm.valid){
-          const data = this.registerForm.value as TRegisterUserData;
-          this.userService.login(data);
-          this.registerForm.reset();
+        const data = this.registerForm.value as TRegisterUserData;
+        this.userService.login(data);
+        this.registerForm.reset();
         }
-      }
+    
 
   
   

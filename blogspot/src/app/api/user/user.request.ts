@@ -15,7 +15,7 @@ import {
   providedIn: 'root'
 })
 export class UserRequest {
-  private BASE_URL = "http://localhost:3001"
+  private BASE_URL = "http://localhost:3000"
 
   constructor(private http: HttpClient) { }
 
