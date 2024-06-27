@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms'; 
 import { UserService } from '../../services/userService.services';
@@ -5,8 +6,8 @@ import {TRegisterUserData} from  '../../interfaces/user.interfaces';
 @Component({
   selector: 'app-formregister',
   standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './formregister.component.html',
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl:'./formregister.component.html',
   styleUrl: './formregister.component.css'
 })
 export class FormregisterComponent {

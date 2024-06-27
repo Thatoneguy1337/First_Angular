@@ -10,7 +10,7 @@
         <input type="fullname" placeholder="insira o seu nome completo" formControlName="fullname">
         </div>
         <p
-        *ngIf="registerForm.get('fullname')?.errors?.['required'] && loginForm.get('fullname')?.value !== null"
+        *ngIf="registerForm.get('fullname')?.errors?.['required'] && registerForm.get('fullname')?.value !== null"
         >
         O Nome completo é obrigatório
         </p>
@@ -25,7 +25,7 @@
        <input type="username" placeholder="insira o nome do usuário" formControlName="username">
        </div> 
        <p
-        *ngIf="registerForm.get('username')?.errors?.['required'] && loginForm.get('username')?.value !== null"
+        *ngIf="registerForm.get('username')?.errors?.['required'] && registerForm.get('username')?.value !== null"
         >
         O nome do usuário é obrigatório
         </p>
@@ -54,7 +54,7 @@
      <input type="email" placeholder="SeuEmail@gmail.com" formControlName="email">
      </div>
      <p
-        *ngIf="registerForm.get('email')?.errors?.['required'] && loginForm.get('email')?.value !== null"
+        *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.value !== null"
       >
         O e-mail é obrigatório
       </p>
@@ -69,7 +69,7 @@
        <input type="password" placeholder="password" formControlName="password"> 
        </div> 
        <p
-        *ngIf="registerForm.get('password')?.errors?.['required'] && loginForm.get('password')?.value !== null"
+        *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.value !== null"
         >
         A senha é obrigatória
        </p>
@@ -96,7 +96,7 @@
        <div>    
        <input type="telephone" placeholder="(11)5555-5555" formControlName="telephone">
         <p
-        *ngIf="registerForm.get('telephone')?.errors?.['required'] && loginForm.get('telephone')?.value !== null"
+        *ngIf="registerForm.get('telephone')?.errors?.['required'] && registerForm.get('telephone')?.value !== null"
         >
         O telefone é obrigatório
         </p>
@@ -112,7 +112,7 @@
        <input type="text" type="text" placeholder="dd/mm/aa" formControlName="birthdate">
        </div>
        <p
-        *ngIf="registerForm.get('birthsdate')?.errors?.['required'] && loginForm.get('birthdate')?.value !== null"
+        *ngIf="registerForm.get('birthsdate')?.errors?.['required'] && registerForm.get('birthdate')?.value !== null"
         >
         A data de aniversário é obrigatória
         </p>
@@ -126,7 +126,7 @@
        <div>   
        <input type="zip_code" placeholder="CEP" formControlName="zip_code">
        <p
-       *ngIf="registerForm.get('zip_code')?.errors?.['required'] && loginForm.get('zip_code')?.value !== null"
+       *ngIf="registerForm.get('zip_code')?.errors?.['required'] && registerForm.get('zip_code')?.value !== null"
        >
         O CEP é obrigatório
        </p>
@@ -142,7 +142,7 @@
        <input type="state" placeholder="Ex: São Paulo " formControlName="state">
        </div> 
        <p
-       *ngIf="registerForm.get('state')?.errors?.['required'] && loginForm.get('state')?.value !== null"
+       *ngIf="registerForm.get('state')?.errors?.['required'] && registerForm.get('state')?.value !== null"
        >
         O Estado é obrigatório
        </p>
@@ -157,7 +157,7 @@
        <input type="text" placeholder="Ex: Mogi das cruzes" formControlName="city">
        </div>
        <p
-       *ngIf="registerForm.get('city')?.errors?.['required'] && loginForm.get('city')?.value !== null"
+       *ngIf="registerForm.get('city')?.errors?.['required'] && registerForm.get('city')?.value !== null"
        >
         O Estado é obrigatório
        </p>
@@ -171,7 +171,7 @@
        <div>   
        <input type="street" placeholder="Ex: Rua ibiraba" formControlName="street">
        <p
-       *ngIf="registerForm.get('street')?.errors?.['required'] && loginForm.get('street')?.value !== null"
+       *ngIf="registerForm.get('street')?.errors?.['required'] && registerForm.get('street')?.value !== null"
        >
         O campo rua é obrigatório
        </p>
@@ -187,7 +187,7 @@
        <input type="number" placeholder="Ex: 123" formControlName="number">
        </div> 
        <p
-       *ngIf="registerForm.get('number')?.errors?.['required'] && loginForm.get('number')?.value !== null"
+       *ngIf="registerForm.get('number')?.errors?.['required'] && registerForm.get('number')?.value !== null"
        >
         O campo número é obrigatório
        </p>
