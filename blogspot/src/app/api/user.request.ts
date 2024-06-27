@@ -16,7 +16,7 @@ export class UserRequest {
   constructor(private http: HttpClient) { }
 
   register(formData: TRegisterUserData){
-    return this.http.post<IRegisterUserReturn>(`${this.BASE_URL}/users`, formData);
+    return this.http.post<IRegisterUserReturn>(`${this.BASE_URL}/user`, formData);
   }
 
   login(formData: TLoginUserData){
