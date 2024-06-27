@@ -64,6 +64,11 @@ border: solid 2px var(--color-primary);
 transition: 1.5s;    
 }
 
+p{
+    color: var(--color-secondary);
+}
+
+
 @media (min-width: 768px)  {
 
     form {

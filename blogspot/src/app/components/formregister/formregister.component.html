@@ -29,7 +29,7 @@
         >
         O nome do usuário é obrigatório
         </p>
-        <p *ngIf="registerForm.get('fullname')?.errors?.['minlength']">
+        <p *ngIf="registerForm.get('username')?.errors?.['minlength']">
             O nome precisa conter pelo menos 6 caracteres
        </p>
     </label>
@@ -86,7 +86,12 @@
        <div>    
        <input type="ssc_number" placeholder="insira seu cpf aqui" formControlName="ssc_number">
        </div>
-       <p *ngIf="registerForm.get('fullname')?.errors?.['minlength']">
+       <p
+       *ngIf="registerForm.get('ssc_number')?.errors?.['required'] && registerForm.get('ssc_number')?.value !== null"
+       >
+       O cpf é um campo obrigatório
+       </p>
+       <p *ngIf="registerForm.get('ssc_number')?.errors?.['minlength']">
         O cpf precisa conter pelo menos 8 caracteres
         </p>
     </label>
@@ -95,15 +100,15 @@
         <h5>Telephone</h5>
        <div>    
        <input type="telephone" placeholder="(11)5555-5555" formControlName="telephone">
-        <p
-        *ngIf="registerForm.get('telephone')?.errors?.['required'] && registerForm.get('telephone')?.value !== null"
-        >
-        O telefone é obrigatório
-        </p>
-        <p *ngIf="registerForm.get('telephone')?.errors?.['minlength']">
-        O telefone precisa conter pelo menos 12 caracteres
-        </p> 
-      </div> 
+    </div> 
+    <p
+    *ngIf="registerForm.get('telephone')?.errors?.['required'] && registerForm.get('telephone')?.value !== null"
+    >
+    O telefone é obrigatório
+    </p>
+    <p *ngIf="registerForm.get('telephone')?.errors?.['minlength']">
+    O telefone precisa conter pelo menos 12 caracteres
+    </p> 
     </label>
    
     <label>
@@ -125,15 +130,15 @@
         <h5>CEP</h5>
        <div>   
        <input type="zip_code" placeholder="CEP" formControlName="zip_code">
-       <p
-       *ngIf="registerForm.get('zip_code')?.errors?.['required'] && registerForm.get('zip_code')?.value !== null"
-       >
-        O CEP é obrigatório
-       </p>
-       <p *ngIf="registerForm.get('zip_code')?.errors?.['minlength']">
-       O telefone precisa conter pelo menos 8 caracteres
-       </p>
-        </div>     
+    </div>     
+    <p
+    *ngIf="registerForm.get('zip_code')?.errors?.['required'] && registerForm.get('zip_code')?.value !== null"
+    >
+     O CEP é obrigatório
+    </p>
+    <p *ngIf="registerForm.get('zip_code')?.errors?.['minlength']">
+    O telefone precisa conter pelo menos 8 caracteres
+    </p>
     </label>
    
     <label>
@@ -170,15 +175,15 @@
        <h5>Rua</h5>
        <div>   
        <input type="street" placeholder="Ex: Rua ibiraba" formControlName="street">
-       <p
-       *ngIf="registerForm.get('street')?.errors?.['required'] && registerForm.get('street')?.value !== null"
-       >
-        O campo rua é obrigatório
-       </p>
-       <p *ngIf="registerForm.get('street')?.errors?.['minlength']">
-       O campo rua precisa conter pelo menos 8 caracteres
-       </p> 
-       </div> 
+    </div> 
+    <p
+    *ngIf="registerForm.get('street')?.errors?.['required'] && registerForm.get('street')?.value !== null"
+    >
+     O campo rua é obrigatório
+    </p>
+    <p *ngIf="registerForm.get('street')?.errors?.['minlength']">
+    O campo rua precisa conter pelo menos 8 caracteres
+    </p> 
     </label>
     
     <label>
@@ -191,7 +196,7 @@
        >
         O campo número é obrigatório
        </p>
-       <p *ngIf="registerForm.get('número')?.errors?.['minlength']">
+       <p *ngIf="registerForm.get('number')?.errors?.['minlength']">
        O campo número precisa conter pelo menos 1 caracter
        </p> 
     </label>
