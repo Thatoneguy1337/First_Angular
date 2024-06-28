@@ -99,7 +99,7 @@
     <label>
         <h5>Telephone</h5>
        <div>    
-       <input type="telephone" placeholder="(11)5555-5555" formControlName="telephone">
+       <input type="text" placeholder="(11)5555-5555" formControlName="telephone">
     </div> 
     <p
     *ngIf="registerForm.get('telephone')?.errors?.['required'] && registerForm.get('telephone')?.value !== null"

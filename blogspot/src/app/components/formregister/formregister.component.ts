@@ -20,8 +20,8 @@ export class FormregisterComponent {
     registerForm = new FormGroup({
       fullname:  new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(45)]),
       username:  new FormControl(null,  [Validators.required, Validators.minLength(6)]) ,
-      user_img: new FormControl(null),
-      bg_img: new FormControl(null),
+      user_img: new FormControl(""),
+      bg_img: new FormControl(""),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)] ) ,
       ssc_number: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})')]),
@@ -38,8 +38,7 @@ export class FormregisterComponent {
       onSubmit() {
         const data = this.registerForm.value as TRegisterUserData;
         console.log(this.registerForm.get('password')?.errors);
-        this.userService.register(data);
-        this.registerForm.reset();
+        this.userService.register(data); 
         }
     
 

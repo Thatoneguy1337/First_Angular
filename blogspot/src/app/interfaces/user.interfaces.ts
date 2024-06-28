@@ -40,16 +40,29 @@ export type TLoginUserData = Pick<IUserData, "email" | "password">;
 
 export type TUserReturn = Omit<IUserData, "password">;
 
-
-
 export interface IRegisterUserReturn{
-    accessToken: string;
-    user: TUserReturn;
+    id: number | null;    
+    fullname: string | null; 
+    username: string | null;
+    user_img: string | null;
+    bg_img: string | null;
+    email: string | null;
+    password: string | null;
+    ssc_number: string | null;
+    telephone: string | null;
+    birthdate: string | null;
+    zip_code: string | null;
+    state: string | null;
+    city: string | null;
+    street: string | null;
+    number: string | null;
 }
 
+
+
 export interface ILoginUserReturn{
-    accessToken: string;
-    user: TUserReturn
+    token: string;
+    user_id: string;
 }
 
 export interface IUserEmail{

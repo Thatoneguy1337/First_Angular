@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {
   TLoginUserData,
+  ILoginUserReturn,
   TRegisterUserData,
   TUserReturn,
 } from '../interfaces/user.interfaces';
@@ -57,10 +58,9 @@ export class UserService {
 
   login(formData: TLoginUserData) {
     this.userRequest.login(formData).subscribe({
-      next: (data) => {
-        this.userSignal.set(data.user);
-        localStorage.setItem('@TOKEN', JSON.stringify(data.accessToken));
-        localStorage.setItem('@USERID', JSON.stringify(data.user.id));
+      next: (data:ILoginUserReturn) => {
+        localStorage.setItem('@TOKEN', JSON.stringify(data.token));
+        localStorage.setItem('@USERID', JSON.stringify(data.user_id));
         this.router.navigateByUrl('');
       },
       error: (error) => {
