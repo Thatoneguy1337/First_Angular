@@ -59,9 +59,8 @@ flex-direction: column;
 border-radius: 8px;
 }
 
-label > div:hover {
-border: solid 2px var(--color-primary);
-transition: 1.5s;    
+#succes-input {
+border: solid 2px var(--color-primary);   
 }
 
 p{

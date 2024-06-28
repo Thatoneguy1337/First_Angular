@@ -12,6 +12,9 @@ import { UserService } from '../../services/userService.services';
 })
 export class FormLoginComponent {
    loginForm: FormGroup;
+   isSubmitted = false;
+   isSuccess = false;
+   isError = false;
   
   constructor(
     private userService: UserService, 
@@ -25,9 +28,15 @@ export class FormLoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
+      this.isSuccess = true;
+      this.isError = false
       const data = this.loginForm.value as TLoginUserData;
       this.userService.login(data);
       this.loginForm.reset();
     }
+    else {
+      this.isSuccess = false;
+      this.isError = true;
+    } 
   }
 }
