@@ -44,10 +44,17 @@ export class FormregisterComponent {
 
 
     onSubmit() {
-        const data = this.registerForm.value as TRegisterUserData;
-        console.log(this.registerForm.get('password')?.errors);
-        this.userService.register(data); 
-        }
+      if(this.registerForm.valid){
+      const data = this.registerForm.value as TRegisterUserData;
+      console.log(this.registerForm.get('password')?.errors);
+      this.userService.register(data);
+      }
+      else{
+        this.isSuccess = false;
+        this.isError = false;
+      }
+
+    }
     
 
   

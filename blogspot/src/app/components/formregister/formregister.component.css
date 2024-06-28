@@ -62,6 +62,10 @@
     border: solid 2px var(--color-primary);    
   }
 
+  #Error-message {
+    border: solid 2px var(--color-secondary);
+  }
+
   p{
     color:var(--color-secondary);
 

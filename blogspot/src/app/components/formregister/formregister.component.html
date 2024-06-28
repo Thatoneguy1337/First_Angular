@@ -6,8 +6,10 @@
     
     <label>
         <h5>Fullname</h5>   
-        <div id="success-input">
+        <div *ngIf="isSubmitted && isSuccess" id="success-input">
+        <div>
         <input type="fullname" placeholder="insira o seu nome completo" formControlName="fullname">
+        </div>
         </div>
         <p
         *ngIf="registerForm.get('fullname')?.errors?.['required'] && registerForm.get('fullname')?.value !== null"
@@ -21,8 +23,10 @@
     
     <label>
         <h5>Username</h5>
-       <div id="success-input">    
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">    
+       <div>
        <input type="username" placeholder="insira o nome do usuário" formControlName="username">
+       </div>
        </div> 
        <p
         *ngIf="registerForm.get('username')?.errors?.['required'] && registerForm.get('username')?.value !== null"
@@ -36,22 +40,28 @@
     
     <label>
         <h5>Foto de perfil do usuário(opcional)</h5>   
-       <div id="success-input">
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">
+        <div>
         <input type="user_img" placeholder="insira a url da imagem aqui" formControlName="user_img">
+        </div>
        </div>
     </label>
    
     <label>
        <h5>Foto do background do perfil(opcional)</h5>   
-       <div id="success-input">
-       <input type="bg_img" placeholder="insira a url da imagem aqui" formControlName="bg_img">
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">
+       <div>
+        <input type="bg_img" placeholder="insira a url da imagem aqui" formControlName="bg_img">
+       </div>
        </div>
     </label>
 
     <label>
      <h5>Email</h5>
-     <div id="success-input">   
+     <div *ngIf="isSubmitted && isSuccess" id="success-input">   
+     <div>
      <input type="email" placeholder="SeuEmail@gmail.com" formControlName="email">
+     </div>
      </div>
      <p
         *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.value !== null"
@@ -65,8 +75,10 @@
 
     <label>
        <h5>Senha</h5>
-       <div id="success-input">
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">
+       <div>
        <input type="password" placeholder="password" formControlName="password"> 
+       </div>
        </div> 
        <p
         *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.value !== null"
@@ -83,8 +95,10 @@
     
     <label>
         <h5>Cpf</h5>
-       <div id="success-input">    
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">    
+       <div>
        <input type="ssc_number" placeholder="insira seu cpf aqui" formControlName="ssc_number">
+       </div>
        </div>
        <p
        *ngIf="registerForm.get('ssc_number')?.errors?.['required'] && registerForm.get('ssc_number')?.value !== null"
@@ -98,23 +112,27 @@
    
     <label>
         <h5>Telephone</h5>
-       <div id="success-input">    
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">    
+       <div>
        <input type="text" placeholder="(11)5555-5555" formControlName="telephone">
-    </div> 
-    <p
-    *ngIf="registerForm.get('telephone')?.errors?.['required'] && registerForm.get('telephone')?.value !== null"
-    >
-    O telefone é obrigatório
-    </p>
-    <p *ngIf="registerForm.get('telephone')?.errors?.['minlength']">
-    O telefone precisa conter pelo menos 12 caracteres
-    </p> 
+       </div>
+       </div> 
+        <p
+        *ngIf="registerForm.get('telephone')?.errors?.['required'] && registerForm.get('telephone')?.value !== null"
+        >
+        O telefone é obrigatório
+        </p>
+        <p *ngIf="registerForm.get('telephone')?.errors?.['minlength']">
+        O telefone precisa conter pelo menos 12 caracteres
+        </p> 
     </label>
    
     <label>
         <h5>Data de nascimento</h5>
-       <div id="success-input">    
-       <input type="text" type="text" placeholder="dd/mm/aa" formControlName="birthdate">
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">    
+       <div>
+        <input type="text" type="text" placeholder="dd/mm/aa" formControlName="birthdate">
+       </div>
        </div>
        <p
         *ngIf="registerForm.get('birthsdate')?.errors?.['required'] && registerForm.get('birthdate')?.value !== null"
@@ -128,12 +146,14 @@
    
     <label>
         <h5>CEP</h5>
-       <div id="success-input">   
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">   
+       <div>
        <input type="zip_code" placeholder="CEP" formControlName="zip_code">
-    </div>     
-    <p
-    *ngIf="registerForm.get('zip_code')?.errors?.['required'] && registerForm.get('zip_code')?.value !== null"
-    >
+       </div>
+      </div>     
+        <p
+        *ngIf="registerForm.get('zip_code')?.errors?.['required'] && registerForm.get('zip_code')?.value !== null"
+        >
      O CEP é obrigatório
     </p>
     <p *ngIf="registerForm.get('zip_code')?.errors?.['minlength']">
@@ -143,8 +163,10 @@
    
     <label>
         <h5>Estado</h5>
-       <div id="success-input">    
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">    
+       <div>
        <input type="state" placeholder="Ex: São Paulo " formControlName="state">
+       </div>
        </div> 
        <p
        *ngIf="registerForm.get('state')?.errors?.['required'] && registerForm.get('state')?.value !== null"
@@ -158,8 +180,10 @@
    
     <label>
         <h5>Cidade</h5>
-       <div id="success-input" >    
+       <div *ngIf="isSubmitted && isSuccess" id="success-input" >    
+       <div>
        <input type="text" placeholder="Ex: Mogi das cruzes" formControlName="city">
+       </div>
        </div>
        <p
        *ngIf="registerForm.get('city')?.errors?.['required'] && registerForm.get('city')?.value !== null"
@@ -173,22 +197,23 @@
    
     <label>
        <h5>Rua</h5>
-       <div id="success-input">   
-       <input type="street" placeholder="Ex: Rua ibiraba" formControlName="street">
-    </div> 
-    <p
-    *ngIf="registerForm.get('street')?.errors?.['required'] && registerForm.get('street')?.value !== null"
-    >
-     O campo rua é obrigatório
-    </p>
-    <p *ngIf="registerForm.get('street')?.errors?.['minlength']">
-    O campo rua precisa conter pelo menos 8 caracteres
-    </p> 
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">   
+       
+    <input type="street" placeholder="Ex: Rua ibiraba" formControlName="street">
+       </div> 
+        <p
+        *ngIf="registerForm.get('street')?.errors?.['required'] && registerForm.get('street')?.value !== null"
+        >
+         O campo rua é obrigatório
+        </p>
+        <p *ngIf="registerForm.get('street')?.errors?.['minlength']">
+        O campo rua precisa conter pelo menos 8 caracteres
+        </p> 
     </label>
     
     <label>
         <h5>Number</h5>
-       <div id="success-input">    
+       <div *ngIf="isSubmitted && isSuccess" id="success-input">    
        <input type="text" placeholder="Ex: 123" formControlName="number">
        </div> 
        <p
