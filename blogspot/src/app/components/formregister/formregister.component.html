@@ -189,7 +189,7 @@
     <label>
         <h5>Number</h5>
        <div>    
-       <input type="number" placeholder="Ex: 123" formControlName="number">
+       <input type="text" placeholder="Ex: 123" formControlName="number">
        </div> 
        <p
        *ngIf="registerForm.get('number')?.errors?.['required'] && registerForm.get('number')?.value !== null"
