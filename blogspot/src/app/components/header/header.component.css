@@ -8,11 +8,13 @@ div{
 
 h1{
 font-size: 20px; 
+font-weight: bold;
 }
 
 h2{
  font-size: 20px;
- color:var(--color-primary);   
+ color:var(--color-primary); 
+ font-weight: bold;  
 }
 
 
