@@ -1,6 +1,10 @@
 
     <div routerLink="/" routerLinkActive="active"><h1>Blog</h1><h2>Spot</h2></div>
-    <img src="/blogspot/src/img/icons8-menu-50.png"alt="hub" (click)="toggleNav()"/>
+    <div class="menu-hamburguer" (click)="toggleNav()">
+        <div class="line" [class.change]="isNavVisible"></div>
+        <div class="line" [class.change]="isNavVisible"></div>
+        <div class="line" [class.change]="isNavVisible"></div>
+    </div>
     <nav *ngIf="isNavVisible">
      <button routerLink="/login" routerLinkActive="active">Login</button>   
      <button routerLink="/register" routerLinkActive="active">Registro</button>
