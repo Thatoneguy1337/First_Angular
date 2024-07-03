@@ -84,11 +84,7 @@ li{
         transform: rotate(45deg) translate(-4px, -4px);
       }    
     
-@media (min-width: 425px) {
-  nav{
-    margin-left: 280px;
-  }
-}
+
       
 @media (min-width: 768px)  {
 
@@ -97,12 +93,12 @@ li{
     }
 
     nav{
+        margin-top: 20px;
         width:43%;
-        height: 210px;
         display:flex;
+        align-items: center;
         flex-direction: row;
         box-shadow: none;
-        position: static;
         margin-right: 12px;
         gap: 12px;
         }
