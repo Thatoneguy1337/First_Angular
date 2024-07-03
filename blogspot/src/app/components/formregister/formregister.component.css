@@ -57,14 +57,10 @@
   flex-direction: column;
   border-radius: 8px;
   }
-
-  #succes-input {
-    border: solid 2px var(--color-primary);    
-  }
-
-  #Error-message {
-    border: solid 2px var(--color-secondary);
-  }
+  
+  label > div:hover {
+    border: solid 2px var(--color-primary);   
+    }
 
   p{
     color:var(--color-secondary);
