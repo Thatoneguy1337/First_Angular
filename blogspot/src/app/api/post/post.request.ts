@@ -45,7 +45,7 @@ export class PostRequest {
          
          return this.http.delete<TPostUserData>(`${this.BASE_URL}/post/${postId}`, {
             headers: {
-                AUthorization: `Bearer ${parsedToken}`
+                Authorization: `Bearer ${parsedToken}`
             }
          });
         } else {
